@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
 		},
 		config = function()
 			vim.keymap.set("n", "<leader>f", vim.cmd.Files)
-			vim.keymap.set("n", "<leader>l", vim.cmd.Lines)
+			vim.keymap.set("n", "<leader>L", vim.cmd.Lines)
 			vim.keymap.set("n", "<leader>b", vim.cmd.Buffers)
 
 			-- so that .gitignore is respected
