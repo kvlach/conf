@@ -50,25 +50,6 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	--use {
-	--	'projekt0n/github-nvim-theme',
-	--	tag = 'v0.0.7',
-	--	config = function()
-	--		require("github-theme").setup({
-	--			theme_style = "dimmed",
-	--		})
-	--	end
-	--}
-
-	--use {
-	--	'rose-pine/neovim',
-	--	as = 'rose-pine',
-	--	config = function()
-	--		require("rose-pine").setup()
-	--		vim.cmd('colorscheme rose-pine')
-	--	end
-	--}
-
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
