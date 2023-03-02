@@ -167,6 +167,7 @@ return require('packer').startup(function(use)
 			lsp.preset('recommended')
 
 			lsp.ensure_installed({
+				'bashls',
 				'gopls',
 				'lua_ls',
 			})
