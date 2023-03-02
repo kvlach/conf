@@ -175,12 +175,12 @@ return require('packer').startup(function(use)
 			lsp.on_attach(function(client, bufnr)
 				local opts = { buffer = bufnr, remap = false }
 
-				vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-				vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-				vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
-				vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, opts)
-				vim.keymap.set('n', '[d', function() vim.diagnostic.goto_prev() end, opts)
-				vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts)
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
+				vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+				vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+				vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
 				-- auto format on save, formatting_sync instead of formatting because
 				-- formatting is async
