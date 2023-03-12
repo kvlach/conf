@@ -124,7 +124,12 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use 'mbbill/undotree'
+	use {
+		"mbbill/undotree",
+		config = function()
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+		end
+	}
 
 	use {
 		"tpope/vim-fugitive",
