@@ -195,7 +195,7 @@ return require('packer').startup(function(use)
 
 				-- auto format on save, formatting_sync instead of formatting because
 				-- formatting is async
-				vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+				vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = false })]]
 			end)
 
 			lsp.setup()
