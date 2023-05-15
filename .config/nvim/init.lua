@@ -244,4 +244,6 @@ return require('packer').startup(function(use)
 			vim.keymap.set("n", "<leader>t", vim.cmd.NvimTreeToggle)
 		end
 	}
+
+	use 'christoomey/vim-tmux-navigator'
 end)
