@@ -1,0 +1,24 @@
+{
+	// Appearance
+	"font_face": "Berkeley Mono",
+	"font_size": 12,
+	"theme": "Default Dark.sublime-theme",
+	"color_scheme": "Mariana.sublime-color-scheme",
+
+	"word_wrap": false,
+	"default_line_ending": "unix",
+	"show_line_endings": true,
+	"sublime_merge_path": "/run/current-system/sw/bin/sublime_merge",
+
+	"rulers": [
+		[80, "solid"],
+	],
+
+	// vim
+	"ignored_packages": [
+	], // enable vintage mode
+	"relative_line_numbers": true,
+	"vintage_start_in_command_mode": true,
+	"vintage_use_clipboard": true,
+	"vintage_ctrl_keys": true,
+}
