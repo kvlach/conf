@@ -1,0 +1,100 @@
+* Basic UI stuff
+
+** Inhibits the startup screen 
+#+begin_src emacs-lisp
+  (setq inhibit-startup-message t)
+#+end_src
+
+** Disable visible scrollbar
+#+begin_src emacs-lisp
+  (scroll-bar-mode -1)
+#+end_src
+
+** Disable the toolbar
+#+begin_src emacs-lisp
+  (tool-bar-mode -1)
+#+end_src
+
+** Disable tooltips
+#+begin_src emacs-lisp
+  (tooltip-mode -1)
+#+end_src
+
+** Disable the menu bar
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+#+end_src
+
+** Font
+#+begin_src emacs-lisp
+  (set-frame-font "Berkeley Mono 12" nil t)
+#+end_src
+
+** Line Numbers
+#+begin_src emacs-lisp
+  (column-number-mode)
+  (global-display-line-numbers-mode t)
+  (setq display-line-numbers-type 'relative)
+#+end_src
+
+** Make ESC quit prompts
+#+begin_src emacs-lisp
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+#+end_src
+
+
+* Backup files in a seperate dir instead of the current directory
+#+begin_src emacs-lisp
+  (setq backup-directory-alist 
+    (list (cons "." (expand-file-name "backups" user-emacs-directory))))
+#+end_src
+
+* Packages
+
+** Initialize package sources
+#+begin_src emacs-lisp
+(require 'package)
+
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+#+end_src
+
+*** Initialize use-package on non-Linux platforms
+#+begin_src emacs-lisp
+(unless (package-installed-p 'use-package)
+   (package-install 'use-package))
+#+end_src
+
+** use-package
+#+begin_src emacs-lisp
+(require 'use-package)
+(setq use-package-always-ensure t)
+#+end_src
+
+** theme
+#+begin_src emacs-lisp
+(use-package doom-themes
+  ;:init (load-theme 'doom-tomorrow-night t))
+  :init (load-theme 'doom-zenburn t))
+#+end_src
+
+
+** packages
+
+*** evil mode
+
+#+begin_src emacs-lisp
+  (use-package evil
+
+    :init
+      ;; https://stackoverflow.com/a/39826709
+      (setq evil-want-C-u-scroll t)
+
+    :config
+      (evil-mode 1))
+#+end_src
