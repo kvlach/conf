@@ -1,6 +1,6 @@
 return {
 	{
-		'ellisonleao/gruvbox.nvim',
+		"ellisonleao/gruvbox.nvim",
 		config = function() -- setup must be called before loading the colorscheme
 			-- Default options:
 			require("gruvbox").setup({
@@ -29,11 +29,23 @@ return {
 		end
 	},
 
-	-- use {
-	-- 	"mcchrish/zenbones.nvim",
-	-- 	requires = "rktjmp/lush.nvim",
+	-- {
+	-- 	"ribru17/bamboo.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		-- vim.g.zenbones_darkness = 'stark'
+	-- 		require("bamboo").setup {
+	-- 			-- optional configuration here
+	-- 		}
+	-- 		require("bamboo").load()
+	-- 	end,
+	-- },
+
+	-- {
+	-- 	"mcchrish/zenbones.nvim",
+	-- 	dependencies = "rktjmp/lush.nvim",
+	-- 	config = function()
+	-- 		-- vim.g.zenbones_darkness = "stark"
 	-- 		vim.cmd("colorscheme zenbones")
 	-- 	end
 	-- },

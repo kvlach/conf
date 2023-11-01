@@ -36,9 +36,9 @@ return {
 	},
 
 	{
-		'nvim-tree/nvim-tree.lua',
+		"nvim-tree/nvim-tree.lua",
 		--requires = {
-		--	'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		--	"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		--},
 		config = function()
 			-- says this in the docs:
@@ -65,6 +65,6 @@ return {
 	},
 
 	{
-		'christoomey/vim-tmux-navigator'
+		"christoomey/vim-tmux-navigator"
 	},
 }
