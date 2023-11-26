@@ -1,7 +1,7 @@
 return {
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v1.x",
+		branch = "v3.x",
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
@@ -22,13 +22,6 @@ return {
 		},
 		config = function()
 			local lsp = require("lsp-zero")
-			lsp.preset("recommended")
-
-			lsp.ensure_installed({
-				"gopls",
-				"lua_ls",
-				"terraformls",
-			})
 
 			lsp.on_attach(function(client, bufnr)
 				local opts = { buffer = bufnr, remap = false }
@@ -43,7 +36,17 @@ return {
 				vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = false })]]
 			end)
 
-			lsp.setup()
+			require("mason").setup({})
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"gopls",
+					"pyright",
+					"lua_ls",
+					"terraformls",
+				},
+
+				handlers = {lsp.default_setup},
+			})
 		end
 	},
 }
